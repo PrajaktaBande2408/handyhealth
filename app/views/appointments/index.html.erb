@@ -1,0 +1,27 @@
+<h1>Appointments</h1>
+
+<table class="list">
+  <thead>
+    <tr>
+      <th> Doctor Name </th>
+      <th> From Time </th>
+      <th> To Time </th>
+      <th> Date </th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.slot.doctor.full_name%></td>
+        <td><%= appointment.slot.from_time%></td>
+        <td><%= appointment.slot.to_time%></td>
+        <td><%= appointment.slot.date.to_date%></td>
+        <td><%= link_to 'Cancel Appointment', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -1,0 +1,24 @@
+
+.homePageButtons{
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  margin-top: 22 0 0 30 %;
+  margin: 207px 0 0 200px
+}
+
+.homePageButtons > div{
+  display: inline-block;
+  width: 300px;
+}
+
+.homePageButtons > div > a >  input{
+  height: 76px;
+  width: 300px;
+  background: #057A9A;
+  border-radius: 5px;
+  border: 1px solid #d6caca;
+  color: white;
+  font-size: 28px;
+}
+

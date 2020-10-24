@@ -1,0 +1,55 @@
+<h1>Slots</h1>
+<% if @slots.present? %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th> From Time </th>
+        <th> To Time </th>
+        <th> Date </th>
+        <% if current_doctor.present? %>
+          <th>Appointment</th>
+          <th colspan="2"></th>
+        <% elsif current_patient.present? %>
+          <th>Doctor Name</th>
+          <th></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @slots.each do |slot| %>
+        <tr>
+          <td><%= slot.from_time %></td>
+          <td><%= slot.to_time %></td>
+          <td><%= slot.date.to_date %></td>
+          <% if current_doctor.present? %>
+            <% if slot.appointment.present? %>
+              <td><%= link_to 'View Appointment', slot.appointment %></td>
+            <% else %>
+              <td>Not booked yet</td>
+            <% end %>
+            <td><%= link_to 'Edit', edit_slot_path(slot) %></td>
+            <% unless slot.appointment.present? %>
+            <td><%= link_to 'Destroy', slot, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            </td>
+          <% elsif current_patient.present? %>
+            <td><%= slot.doctor.full_name %></td>
+            <td><%= link_to 'Book Appointment', book_slot_path(slot), method: :post %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <% if current_doctor.present? %>
+    <h3>Slots are empty, please add some slots.</h3>
+  <% elsif current_patient.present? %>
+    <h3>Sorry, Currently Doctors are not available</h3>
+  <% end %>
+<% end %>
+
+<br>
+<% if current_doctor.present? %>
+  <%= link_to 'New Slot', new_slot_path %>
+<% end %>

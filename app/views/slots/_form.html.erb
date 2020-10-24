@@ -1,0 +1,29 @@
+<%= form_with(model: slot, local: true) do |form| %>
+  <% if slot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(slot.errors.count, "error") %> prohibited this slot from being saved:</h2>
+
+      <ul>
+        <% slot.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :from_time %><br />
+    <%= form.text_field :from_time%>
+  </div>
+  <div class="field">
+    <%= form.label :to_time %><br />
+    <%= form.text_field :to_time%>
+  </div>
+  <div class="field">
+    <%= form.label :date %><br />
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
