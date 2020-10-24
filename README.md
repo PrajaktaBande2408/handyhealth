@@ -9,10 +9,10 @@ Rails 6.0.3.4
 Install webpacker with "run rails webpacker:install"
 
 ## Gems used
-# Used postgres as the database for Active Record
+Used postgres as the database for Active Record
 gem 'pg'
 
-# For authentication
+For authentication
 gem 'devise'
 
 ## Database creation
