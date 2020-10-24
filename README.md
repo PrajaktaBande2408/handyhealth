@@ -25,4 +25,4 @@ rake db:migrate
 rails s -p 3000
 
 ![alt text](https://github.com/PrajaktaBande2408/handyhealth/blob/master/app/assets/images/doctors_appointment.png)
-![alt text](https://github.com/PrajaktaBande2408/handyhealth/blob/master/app/assets/images/Screen%20Shot%202020-10-24%20at%208.55.29%20PM.png)
+
