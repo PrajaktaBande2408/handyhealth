@@ -24,4 +24,4 @@ rake db:migrate
 ## Start application on local
 rails s -p 3000
 
-https://github.com/PrajaktaBande2408/handyhealth/blob/master/app/assets/images/login_bg.jpg
+![alt text](https://github.com/PrajaktaBande2408/handyhealth/blob/master/app/assets/images/login_bg.jpg?raw=true)
